@@ -16,16 +16,11 @@ public class StanzaMagica extends Stanza {
 	}
 	@Override
 	public boolean addAttrezzo(Attrezzo attrezzo) {
-		this.contatoreAttrezziPosati++;
-		if (this.contatoreAttrezziPosati>this.sogliaMagica)
-			attrezzo = this.modificaAttrezzo(attrezzo);
-		if (this.numeroAttrezzi<this.attrezzi.length) {
-			this.attrezzi[this.numeroAttrezzi] = attrezzo;
-			this.numeroAttrezzi++;
-			return true;
-		}
-		else return false;
-		}
+	this.contatoreAttrezziPosati++;
+	if (this.contatoreAttrezziPosati>this.sogliaMagica)
+	attrezzo = this.modificaAttrezzo(attrezzo);
+	return super.addAttrezzo(attrezzo);
+	}
 		private Attrezzo modificaAttrezzo(Attrezzo attrezzo) {
 			StringBuilder nomeInvertito;
 			int pesoX2 = attrezzo.getPeso()*2;
