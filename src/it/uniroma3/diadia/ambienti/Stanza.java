@@ -1,5 +1,8 @@
 package it.uniroma3.diadia.ambienti;
 
+import java.util.Iterator;
+import java.util.List;
+
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 
 /**
@@ -17,9 +20,9 @@ public class Stanza {
 
 	static final private int NUMERO_MASSIMO_DIREZIONI = 4;	//rende immodificabile il numero max di dir adiacenti
 	static final private int NUMERO_MASSIMO_ATTREZZI = 10;
-
+	
 	private String nome;
-	private Attrezzo[] attrezzi;
+	private  Attrezzo[] attrezzi;
 	private int numeroAttrezzi;
 	private Stanza[] stanzeAdiacenti;
 	private int numeroStanzeAdiacenti;
@@ -33,9 +36,9 @@ public class Stanza {
 		this.nome = nome;
 		this.numeroStanzeAdiacenti = 0;
 		this.numeroAttrezzi = 0;
-		this.direzioni = new String[NUMERO_MASSIMO_DIREZIONI];
-		this.stanzeAdiacenti = new Stanza[NUMERO_MASSIMO_DIREZIONI];
-		this.attrezzi = new Attrezzo[NUMERO_MASSIMO_ATTREZZI];
+				this.direzioni = new String[NUMERO_MASSIMO_DIREZIONI];
+				this.stanzeAdiacenti = new Stanza[NUMERO_MASSIMO_DIREZIONI];
+				this.attrezzi = new Attrezzo[NUMERO_MASSIMO_ATTREZZI];
 	}
 
 	/**
@@ -47,17 +50,18 @@ public class Stanza {
 	public void impostaStanzaAdiacente(String direzione, Stanza stanza) {
 		boolean aggiornato = false;
 		if(stanza!=null)
-			for(int i=0; i<this.direzioni.length; i++)
-				if (direzione.equals(this.direzioni[i])) {
-					this.stanzeAdiacenti[i] = stanza;
-					aggiornato = true;
+						for(int i=0; i<this.direzioni.length; i++)
+							if (direzione.equals(this.direzioni[i])) {
+								this.stanzeAdiacenti[i] = stanza;
+								aggiornato = true;
+							}
+			for(int i = 0; i<this.direzioni.length;i++)
+			if (!aggiornato)	//sfrutto numeromaxdirezioni
+				if (this.numeroStanzeAdiacenti < NUMERO_MASSIMO_DIREZIONI) {
+					this.direzioni[numeroStanzeAdiacenti] = direzione;
+					this.stanzeAdiacenti[numeroStanzeAdiacenti] = stanza;
+					this.numeroStanzeAdiacenti++;
 				}
-		if (!aggiornato)	//sfrutto numeromaxdirezioni
-			if (this.numeroStanzeAdiacenti < NUMERO_MASSIMO_DIREZIONI) {
-				this.direzioni[numeroStanzeAdiacenti] = direzione;
-				this.stanzeAdiacenti[numeroStanzeAdiacenti] = stanza;
-				this.numeroStanzeAdiacenti++;
-			}
 	}
 
 	/**
