@@ -1,5 +1,9 @@
 package it.uniroma3.diadia.giocatore;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 
 public class Borsa {
@@ -12,7 +16,7 @@ public class Borsa {
 	}
 	public Borsa(int pesoMax) {
 		this.pesoMax = pesoMax;
-		this.attrezzi = new Attrezzo[10]; // speriamo che bastino...
+		this.attrezzi = new Attrezzo[10]; //Trasformo in lista
 		this.numeroAttrezzi = 0;
 	}
 	public boolean addAttrezzo(Attrezzo attrezzo) {
@@ -27,7 +31,7 @@ public class Borsa {
 		}
 		else return false;
 	}
-	public int getPesoMax() {
+	public int getPesoMax() {	 	//rimuovo peso max
 		return pesoMax;
 	}
 	public Attrezzo getAttrezzo(String nomeAttrezzo) {
@@ -39,6 +43,13 @@ public class Borsa {
 	}
 	public int getPeso() {
 		int peso = 0;
+		/*Iterator<Attrezzo> iteratore = this.attrezzi.iterator();
+		while(iteratore.hasNext()){
+			Attrezzo a = iteratore.next();
+			peso += a.getPeso();
+		for(Attrezzo a : this.attrezzi)
+			peso += a.getPeso();
+		return peso;*/
 		for (int i = 0; i < this.numeroAttrezzi; i++)
 			peso += this.attrezzi[i].getPeso();
 		return peso;
