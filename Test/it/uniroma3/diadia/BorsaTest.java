@@ -112,6 +112,6 @@ public class BorsaTest {
 	@Test
 	public void testToStringNonVuota(){
 		borsa.addAttrezzo(possibile);
-		assertEquals("Contenuto borsa (3kg/10kg): possibile (3kg) ",borsa.toString());
+		assertEquals("Contenuto borsa (3kg/10kg): possibile (3kg)",borsa.toString());
 	}
 }

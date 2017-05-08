@@ -2,6 +2,9 @@ package it.uniroma3.diadia;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -13,6 +16,7 @@ public class StanzaTest {
 	private Stanza stanzaCollegata1;
 	private Stanza stanzaCollegata2;
 	private Attrezzo spada;
+	private List<Attrezzo> l1;
 	@Before
 	public void setUp(){
 		stanzaSola=new Stanza("stanzaSola");
@@ -21,6 +25,7 @@ public class StanzaTest {
 		stanzaCollegata1.impostaStanzaAdiacente("sud", stanzaCollegata2);
 		stanzaCollegata2.impostaStanzaAdiacente("nord", stanzaCollegata1);
 		spada = new Attrezzo("spada",5);
+		l1 = new ArrayList<>();
 	}
 	//getStanza
 	@Test
@@ -48,17 +53,14 @@ public class StanzaTest {
 	//getAttrezzi
 	@Test
 	public void testGetAttrezziSenzaAttrezzi(){
-		String[] a = new String[10] ;
-		for(int i = 0;i<a.length;i++)
-			a[i]=null;
-		assertArrayEquals(a, stanzaCollegata1.getAttrezzi());
+		List<Attrezzo> l1 = new ArrayList<>();
+		assertEquals(l1, stanzaCollegata1.getAttrezzi());
 	}
 	@Test
 	public void testGetAttrezziConAttr(){
-		Attrezzo[] a = new Attrezzo[10];
-		a[0] = spada;
+		l1.add(spada);
 		stanzaSola.addAttrezzo(spada);
-		assertArrayEquals(a,stanzaSola.getAttrezzi());
+		assertEquals(l1,stanzaSola.getAttrezzi());
 	}
 	//addAttrezzo
 	@Test

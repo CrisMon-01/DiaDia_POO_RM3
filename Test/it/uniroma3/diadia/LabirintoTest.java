@@ -17,12 +17,10 @@ public class LabirintoTest {
 
 	@Test
 	public void testGetStanzaVincente() {
-		Stanza biblioteca = new Stanza("Biblioteca");
 		assertEquals("Biblioteca", l1.getStanzaVincente().getNome());
 	}
 	@Test
 	public void testGetStanzaIn(){
-		Stanza Atrio = new Stanza("Atrio");
 		assertEquals("Atrio", l1.getStanzaIn().getNome());
 	}
 }

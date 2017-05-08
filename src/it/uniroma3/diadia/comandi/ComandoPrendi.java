@@ -17,6 +17,7 @@ public class ComandoPrendi implements Comando {
 			if(a == null)
 				System.out.println("L' attrezzo non è presente nella stanza");
 			else{
+
 				Borsa b = partita.getGiocatore().getBorsa();
 				if(!b.addAttrezzo(a))
 					System.out.println("non puoi metter "+a.getNome()+" nella stanza");
