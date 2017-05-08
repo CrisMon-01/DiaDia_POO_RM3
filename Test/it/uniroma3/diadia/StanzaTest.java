@@ -122,16 +122,15 @@ public class StanzaTest {
 	//getDirezioni
 	@Test
 	public void testGetDirezioniStanzaSola(){
-		assertEquals(0,stanzaSola.getDirezioni().length);
+		assertEquals(0,stanzaSola.getDirezioni().size());
 	}
 	@Test
 	public void testGetDirezioniStanzeUno(){
-		assertEquals(1, stanzaCollegata1.getDirezioni().length);
+		assertEquals(1, stanzaCollegata1.getDirezioni().size());
 	}
 	@Test
 	public void testGetDirezioniStanzeCollegate(){
-		String[] s = {"sud"};
-		assertArrayEquals(s, stanzaCollegata1.getDirezioni());
+		assertEquals(null, stanzaCollegata1.getDirezioni());
 	}
 }
 
