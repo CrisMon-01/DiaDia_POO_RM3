@@ -10,7 +10,6 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 
 import it.uniroma3.diadia.attrezzi.Attrezzo;
-import it.uniroma3.diadia.attrezzi.ComparatoreAttrezzi;
 
 public class Borsa {
 	public final static int DEFAULT_PESO_MAX_BORSA = 10;
@@ -88,10 +87,13 @@ public class Borsa {
 		return s.toString();
 	}
 	public List<Attrezzo> getContenutoOrdinatoPerPeso(){
-		Collections.sort(attrezzi, new ComparatoreAttrezzi());
+		Collections.sort(attrezzi, new ComparatorePesoENome());
 		return attrezzi;
 	}
-	/*public SortedSet<Attrezzo> getContenutoOrdinatoPerNome(){
-		
-	}*/
+	public SortedSet<Attrezzo> getContenutoOrdinatoPerNome(){
+	Collections.sort(attrezzi, new ComparatoreSoloNome());
+	SortedSet<Attrezzo> s = new TreeSet<>();
+	s.addAll(attrezzi);
+	return s;
+	}
 }
