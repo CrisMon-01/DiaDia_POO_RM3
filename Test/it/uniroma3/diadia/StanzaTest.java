@@ -3,7 +3,9 @@ package it.uniroma3.diadia;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -16,7 +18,7 @@ public class StanzaTest {
 	private Stanza stanzaCollegata1;
 	private Stanza stanzaCollegata2;
 	private Attrezzo spada;
-	private List<Attrezzo> l1;
+	private Map<String, Attrezzo> l1;
 	@Before
 	public void setUp(){
 		stanzaSola=new Stanza("stanzaSola");
@@ -25,7 +27,7 @@ public class StanzaTest {
 		stanzaCollegata1.impostaStanzaAdiacente("sud", stanzaCollegata2);
 		stanzaCollegata2.impostaStanzaAdiacente("nord", stanzaCollegata1);
 		spada = new Attrezzo("spada",5);
-		l1 = new ArrayList<>();
+		l1 = new HashMap<>();
 	}
 	//getStanza
 	@Test
@@ -52,13 +54,12 @@ public class StanzaTest {
 	}
 	//getAttrezzi
 	@Test
-	public void testGetAttrezziSenzaAttrezzi(){
-		List<Attrezzo> l1 = new ArrayList<>();
+	public void testGetAttrezziSenzaAttrezzi(){ 
 		assertEquals(l1, stanzaCollegata1.getAttrezzi());
 	}
 	@Test
 	public void testGetAttrezziConAttr(){
-		l1.add(spada);
+		l1.put("spada", spada);
 		stanzaSola.addAttrezzo(spada);
 		assertEquals(l1,stanzaSola.getAttrezzi());
 	}
@@ -69,9 +70,7 @@ public class StanzaTest {
 	}
 	@Test
 	public void testAddAttrezzoStanzaPiena(){
-		for(int i = 0;i<10; i++){
-			stanzaSola.addAttrezzo(spada);
-		}
+		stanzaSola.addAttrezzo(spada);
 		assertFalse(stanzaSola.addAttrezzo(spada));
 	}
 	//hasAttrezzo
@@ -119,19 +118,7 @@ public class StanzaTest {
 		stanzaSola.addAttrezzo(presente);
 		assertTrue(stanzaSola.removeAttrezzo(presente));
 	}
-	//getDirezioni
-	@Test
-	public void testGetDirezioniStanzaSola(){
-		assertEquals(0,stanzaSola.getDirezioni().size());
-	}
-	@Test
-	public void testGetDirezioniStanzeUno(){
-		assertEquals(1, stanzaCollegata1.getDirezioni().size());
-	}
-	@Test
-	public void testGetDirezioniStanzeCollegate(){
-		assertEquals(null, stanzaCollegata1.getDirezioni());
-	}
+	
 }
 
 

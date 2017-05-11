@@ -19,21 +19,19 @@ public class Borsa {
 		this.attrezzi = new ArrayList<>(); //Trasformo in lista
 		//this.numeroAttrezzi = 0;
 	}
-	public boolean addAttrezzo(Attrezzo attrezzo) {
-		return this.attrezzi.add(attrezzo);
-	}
-		/*if(attrezzo!=null){
+	public boolean addAttrezzo(Attrezzo attrezzo) {	
+		if(attrezzo!=null){
 			if (this.getPeso() + attrezzo.getPeso() > this.getPesoMax())
 				return false;
-			if (this.numeroAttrezzi == 10)
+			if (this.attrezzi.size() == 10)
 				return false;
 			//this.attrezzi[this.numeroAttrezzi] = attrezzo;
 			attrezzi.add(attrezzo);
-			this.numeroAttrezzi++;
+			//this.numeroAttrezzi++;
 			return true;
 		}
 		else return false;
-	}*/
+	}
 	public int getPesoMax() {	 	//rimuovo peso max
 		return pesoMax;
 	}

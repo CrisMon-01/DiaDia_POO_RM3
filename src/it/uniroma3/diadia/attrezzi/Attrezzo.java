@@ -42,13 +42,22 @@ public class Attrezzo {
 	public int getPeso() {
 		return this.peso;
 	}
-	
+
 	/**
 	 * Restituisce una rappresentazione stringa di questo attrezzo
 	 * @return la rappresentazione stringa
 	 */
 	public String toString() {
 		return this.getNome()+" ("+this.getPeso()+"kg)";
+	}
+	@Override
+	public boolean equals(Object o){	//equals sempre su un obj
+		Attrezzo that = (Attrezzo) o;
+		return this.getNome().equals(that.getNome());
+	}
+	@Override
+	public int hashCode(){
+		return this.getNome().hashCode(); //sugli int non si usa hascode
 	}
 
 }
