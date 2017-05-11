@@ -8,8 +8,8 @@ import it.uniroma3.diadia.attrezzi.Attrezzo;
 
 public class Borsa {
 	public final static int DEFAULT_PESO_MAX_BORSA = 10;
-	private List<Attrezzo> attrezzi;	//lista du attrezzi
-	private int numeroAttrezzi;
+	private List<Attrezzo> attrezzi;	//lista di attrezzi
+	//private int numeroAttrezzi;
 	private int pesoMax;
 	public Borsa() {
 		this(DEFAULT_PESO_MAX_BORSA);
@@ -17,10 +17,12 @@ public class Borsa {
 	public Borsa(int pesoMax) {
 		this.pesoMax = pesoMax;
 		this.attrezzi = new ArrayList<>(); //Trasformo in lista
-		this.numeroAttrezzi = 0;
+		//this.numeroAttrezzi = 0;
 	}
 	public boolean addAttrezzo(Attrezzo attrezzo) {
-		if(attrezzo!=null){
+		return this.attrezzi.add(attrezzo);
+	}
+		/*if(attrezzo!=null){
 			if (this.getPeso() + attrezzo.getPeso() > this.getPesoMax())
 				return false;
 			if (this.numeroAttrezzi == 10)
@@ -31,7 +33,7 @@ public class Borsa {
 			return true;
 		}
 		else return false;
-	}
+	}*/
 	public int getPesoMax() {	 	//rimuovo peso max
 		return pesoMax;
 	}
@@ -62,7 +64,7 @@ public class Borsa {
 		return peso;*/
 	}
 	public boolean isEmpty() {
-		return this.numeroAttrezzi == 0;
+		return this.attrezzi.isEmpty();
 	}
 	public boolean hasAttrezzo(String nomeAttrezzo) {
 		return this.getAttrezzo(nomeAttrezzo) != null;
@@ -76,7 +78,7 @@ public class Borsa {
 			if(a.getNome().equals(nomeAttrezzo)){
 				iteratore.remove();
 				trovato = true;
-				numeroAttrezzi--;
+				//numeroAttrezzi--;
 			}
 		}
 		if(trovato == true)
