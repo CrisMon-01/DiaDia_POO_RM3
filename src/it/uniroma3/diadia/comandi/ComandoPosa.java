@@ -9,7 +9,6 @@ public class ComandoPosa implements Comando {
 	private String nomeAttezzo;
 	@Override
 	public void esegui(Partita partita) {
-		// TODO Auto-generated method stub
 		if(nomeAttezzo==null)
 			System.out.println("specificare l' oggetto");
 		else{
