@@ -12,11 +12,11 @@ import java.util.TreeSet;
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 
 public class Borsa {
-	public final static int DEFAULT_PESO_MAX_BORSA = 10;
+	public final static int PESO_MAX_BORSA = 10;
 	private List<Attrezzo> attrezzi;	//lista di attrezzi
 	private int pesoMax;
 	public Borsa() {
-		this(DEFAULT_PESO_MAX_BORSA);
+		this(PESO_MAX_BORSA);
 	}
 	public Borsa(int pesoMax) {
 		this.pesoMax = pesoMax;
@@ -70,8 +70,8 @@ public class Borsa {
 			}
 		}
 		if(trovato == true)
-			System.out.println("l' attrezzo "+nomeAttrezzo+" è stato rimosso dalla borsa");
-		else System.out.println("l' attrezzo non è nella borsa");
+			System.out.println("l'attrezzo "+nomeAttrezzo+" è stato rimosso dalla borsa");
+		else System.out.println("l'attrezzo non è nella borsa");
 		return a;
 
 	}

@@ -1,6 +1,5 @@
 package it.uniroma3.diadia;
 
-
 import java.util.Scanner;
 
 import it.uniroma3.diadia.ambienti.Stanza;
@@ -8,7 +7,6 @@ import it.uniroma3.diadia.attrezzi.Attrezzo;
 import it.uniroma3.diadia.comandi.Comando;
 import it.uniroma3.diadia.comandi.FabbricaDiComandiFisarmonica;
 import it.uniroma3.diadia.giocatore.Borsa;
-
 
 /**
  * Classe principale di diadia, un semplice gioco di ruolo ambientato al dia.
@@ -23,7 +21,6 @@ import it.uniroma3.diadia.giocatore.Borsa;
  */
 
 public class DiaDia {
-
 	static final private String MESSAGGIO_BENVENUTO = ""+
 			"Ti trovi nell'Universita', ma oggi e' diversa dal solito...\n" +
 			"Meglio andare al piu' presto in biblioteca a studiare. Ma dov'e'?\n"+
@@ -33,7 +30,6 @@ public class DiaDia {
 			"puoi raccoglierli, usarli, posarli quando ti sembrano inutili\n" +
 			"o regalarli se pensi che possano ingraziarti qualcuno.\n\n"+
 			"Per conoscere le istruzioni usa il comando 'aiuto'.";
-
 
 	private Partita partita;
 
@@ -61,7 +57,7 @@ public class DiaDia {
 	private boolean processaIstruzione(String istruzione) {
 		Comando comandoDaEseguire;
 		FabbricaDiComandiFisarmonica factory = new FabbricaDiComandiFisarmonica();
-				comandoDaEseguire = factory.costruisciComando(istruzione);
+		comandoDaEseguire = factory.costruisciComando(istruzione);
 		comandoDaEseguire.esegui(this.partita);
 		if (this.partita.vinta())
 			System.out.println("Hai vinto!");
