@@ -151,9 +151,10 @@ public class BorsaTest {
 	@Test
 	public void getSortedSetOrdinatoPerPeso(){	
 		assertNotNull(borsaPiena.getSortedSetOrdinatoPerPeso());
-		assertEquals("[piuma (1kg), libro (5kg), ps (5kg), piombo (10kg)]", borsaPiena.getSortedSetOrdinatoPerPeso());
+		assertEquals("[piuma (1kg), libro (5kg), ps (5kg), piombo (10kg)]", borsaPiena.getSortedSetOrdinatoPerPeso().toString());
 		
 	}
+	
 	
 	
 	

@@ -80,10 +80,9 @@ public class ComandoPrendiTest {
 		this.stanza.addAttrezzo(attrezzo2);
 		comando.setParametro("attrezzo2");
 		comando.esegui(partita);
-	
-		assertTrue(this.stanza.hasAttrezzo(attrezzo2.getNome()));
-		assertFalse(this.borsa.hasAttrezzo(attrezzo2.getNome()));
-		
+		//non ho più il limite attr
+		assertFalse(this.stanza.hasAttrezzo(attrezzo2.getNome()));
+		assertTrue(this.borsa.hasAttrezzo(attrezzo2.getNome()));
 	}
 
 	

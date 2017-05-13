@@ -59,7 +59,7 @@ public class ComandoPosaTest {
 		comando.setParametro("foglio");
 		comando.esegui(partita);
 		assertFalse(borsa.isEmpty());
-		assertTrue(stanza.hasAttrezzo(attrezzo.getNome()));
+		assertFalse(stanza.hasAttrezzo(attrezzo.getNome()));
 	}
 	@Test
 	public void testEseguiParametroNullo() {
