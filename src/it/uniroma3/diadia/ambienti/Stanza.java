@@ -20,13 +20,11 @@ import it.uniroma3.diadia.attrezzi.Attrezzo;
  * @see Attrezzo
  * @version base
  */
-
 public class Stanza {
-
+	//CAMPI
 	private String nome;
 	private Map<String, Attrezzo> attrezzi;
 	private Map<String, Stanza>stanzeAdiacenti;
-
 	/**
 	 * Crea una stanza. Non ci sono stanze adiacenti, non ci sono attrezzi.
 	 * @param nome il nome della stanza
@@ -139,7 +137,6 @@ public class Stanza {
 	 * @return true se l'attrezzo e' stato rimosso, false altrimenti
 	 */
 	public boolean removeAttrezzo(Attrezzo attrezzo) {
-		// TODO da implementare
 		if(attrezzo!=null){
 			if(this.attrezzi.remove(attrezzo.getNome(),attrezzo))
 				return true;

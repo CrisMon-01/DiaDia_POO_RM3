@@ -13,7 +13,7 @@ import it.uniroma3.diadia.ambienti.Stanza;
  * @version base
  */
 public class Attrezzo {
-
+	//CAMPI
 	private String nome;
 	private int peso;
 
@@ -50,11 +50,19 @@ public class Attrezzo {
 	public String toString() {
 		return this.getNome()+" ("+this.getPeso()+"kg)";
 	}
+	/**
+	 * reimplementazione di equals
+	 * @return true se due obj. sono uguali
+	 * 			secondo i nuovi criteri
+	 */
 	@Override
 	public boolean equals(Object o){	//equals sempre su un obj
 		Attrezzo that = (Attrezzo) o;
 		return this.getNome().equals(that.getNome());
 	}
+	/**
+	 * @return nuovo hashcode
+	 */
 	@Override
 	public int hashCode(){
 		return this.getNome().hashCode(); //sugli int non si usa hascode

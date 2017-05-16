@@ -6,7 +6,6 @@ import it.uniroma3.diadia.giocatore.Giocatore;
 
 /**
  * Questa classe modella una partita del gioco
- *
  * @author  docente di POO
  * @see Stanza
  * @version base
@@ -24,13 +23,18 @@ public class Partita {
 		this.finita = false;
 		this.giocatore = new Giocatore();
 	}
-
    
-
+	/**
+	 * modifica il camoi stanzacorrente
+	 * @param stanzaCorrente
+	 */
 	public void setStanzaCorrente(Stanza stanzaCorrente) {
 		this.stanzaCorrente = stanzaCorrente;
 	}
-
+	/**
+	 * 
+	 * @return StanzaCorrente
+	 */
 	public Stanza getStanzaCorrente() {
 		return this.stanzaCorrente;
 	}
@@ -58,17 +62,23 @@ public class Partita {
 	public void setFinita() {
 		this.finita = true;
 	}
-
+	/**
+	 * 
+	 * @return labirinto in cui si svolge la partita
+	 */
 	public Labirinto getLabirinto(){
 		return this.labirinto1;
 	}
-
+	/**
+	 * 
+	 * @return giocatore corrente
+	 */
 	public Giocatore getGiocatore() {
 		return this.giocatore;
 	}
-
-
-
+	/**
+	 * @return true se ho ancora CFU
+	 */
 	public boolean giocatoreIsVivo() {
 		// TODO Auto-generated method stub
 		if(this.giocatore.getCfu()>0)

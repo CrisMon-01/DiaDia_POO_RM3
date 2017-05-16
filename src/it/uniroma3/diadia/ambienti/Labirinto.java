@@ -6,12 +6,10 @@ public class Labirinto {
 	// CAMPI
 	private Stanza stanzaIn;
 	private Stanza stanzaVincente;
-
 	// COSTRUTTORE
 	public Labirinto(){
 		init();
 	}
-
 	/**
 	 * Crea tutte le stanze e le porte di collegamento
 	 */
@@ -45,9 +43,15 @@ public class Labirinto {
 		stanzaVincente = biblioteca;
 		stanzaIn = atrio;
 	}
+	/**
+	 * @return la stanza Vincente
+	 */
 	public Stanza getStanzaVincente() {
 		return stanzaVincente;
 	}
+	/**
+	 * @return la stanza iniziale del labirinto
+	 */
 	public Stanza getStanzaIn(){
 		return this.stanzaIn;
 	}
