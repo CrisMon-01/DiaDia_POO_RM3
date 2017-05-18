@@ -1,12 +1,7 @@
 package it.uniroma3.diadia.ambienti;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 
@@ -37,12 +32,11 @@ public class Stanza {
 
 	/**
 	 * Imposta una stanza adiacente.
-	 *
 	 * @param direzione direzione in cui sara' posta la stanza adiacente.
 	 * @param stanza stanza adiacente nella direzione indicata dal primo parametro.
 	 */
 	public void impostaStanzaAdiacente(String direzione, Stanza stanza) {
-		if(stanza!=null)	
+		if(stanza!=null && direzione!= null)	//controllo per non inserire null
 			stanzeAdiacenti.put(direzione, stanza);
 	}
 
@@ -51,7 +45,7 @@ public class Stanza {
 	 * @param direzione
 	 */
 	public Stanza getStanzaAdiacente(String direzione) {		
-		return stanzeAdiacenti.get(direzione);
+		return this.stanzeAdiacenti.get(direzione);
 	}
 
 	/**
@@ -98,7 +92,6 @@ public class Stanza {
 	 * @return la rappresentazione stringa
 	 */
 	public String toString() {
-
 		StringBuilder risultato = new StringBuilder();
 		risultato.append(this.nome);
 		risultato.append("\nUscite: ");
@@ -140,12 +133,12 @@ public class Stanza {
 		if(attrezzo!=null){
 			if(this.attrezzi.remove(attrezzo.getNome(),attrezzo))
 				return true;
-			else {System.out.println("questo oggetto non è nella stanza");
+			else {
+				System.out.println("questo oggetto non è nella stanza");
 			return false;
 			}
 		}
 		return false;
 	}
-
 
 }
