@@ -8,6 +8,7 @@ import org.junit.Test;
 import it.uniroma3.diadia.Partita;
 import it.uniroma3.diadia.ambienti.Stanza;
 import it.uniroma3.diadia.attrezzi.Attrezzo;
+import it.uniroma3.diadia.comandi.AbstractComando;
 import it.uniroma3.diadia.comandi.Comando;
 import it.uniroma3.diadia.comandi.ComandoPosa;
 import it.uniroma3.diadia.giocatore.Borsa;
@@ -16,7 +17,7 @@ public class ComandoPosaTest {
 	private Partita partita;
 	private Borsa borsa;
 	private Attrezzo attrezzo;
-	private Comando comando;
+	private AbstractComando comando;
 	private Stanza stanza;
 	
 	@Before
@@ -34,7 +35,7 @@ public class ComandoPosaTest {
 	public void testSetParametro() {
 		
 		String parametro="prova";
-		Comando comando=new ComandoPosa();
+		AbstractComando comando=new ComandoPosa();
 		comando.setParametro(parametro);
 		assertSame(parametro,comando.getParametro());
 		

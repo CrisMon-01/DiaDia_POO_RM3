@@ -5,12 +5,13 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import it.uniroma3.diadia.comandi.AbstractComando;
 import it.uniroma3.diadia.comandi.Comando;
 import it.uniroma3.diadia.comandi.FabbricaDiComandiFisarmonica;
 
 public class FabbricaDiComandiFisarmonicaTest {
 
-	private Comando comando;
+	private AbstractComando comando;
 	private FabbricaDiComandiFisarmonica factory;
 
 	@Before

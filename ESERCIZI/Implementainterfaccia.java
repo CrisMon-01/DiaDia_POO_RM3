@@ -6,7 +6,8 @@ public class Implementainterfaccia implements Implementabile{
 	double x = i;
 	return x;
 	}
-
+	
+//devo x forsa definire i metodi implementati
 	@Override
 	public String ritrnaStringa(String ss) {
 		// TODO Auto-generated method stub

@@ -1,6 +1,5 @@
 package it.uniroma3.diadia.attrezzi;
 
-import java.lang.reflect.GenericArrayType;
 import java.util.Comparator;
 
 public class ComparatoreAttrezziPerPeso implements Comparator<Attrezzo>{

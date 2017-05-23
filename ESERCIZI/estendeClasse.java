@@ -6,5 +6,5 @@ public class estendeClasse extends Estendibile{
 		return 0;
 	}	
 	
-
+//ext. una classe non devo, ma posso ridef. tutti i metodi
 }

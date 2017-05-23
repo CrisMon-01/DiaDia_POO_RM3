@@ -6,12 +6,13 @@ import org.junit.Before;
 import org.junit.Test;
 
 import it.uniroma3.diadia.Partita;
+import it.uniroma3.diadia.comandi.AbstractComando;
 import it.uniroma3.diadia.comandi.Comando;
 import it.uniroma3.diadia.comandi.ComandoVai;
 
 	public class ComandoVaiTest {
 	private Partita partita;
-	private Comando comando;
+	private AbstractComando comando;
 	
 
 	@Before

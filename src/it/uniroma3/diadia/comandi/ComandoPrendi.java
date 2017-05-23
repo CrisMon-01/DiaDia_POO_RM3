@@ -1,11 +1,10 @@
 package it.uniroma3.diadia.comandi;
 
 import it.uniroma3.diadia.Partita;
-import it.uniroma3.diadia.ambienti.Stanza;
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 import it.uniroma3.diadia.giocatore.Borsa;
 
-public class ComandoPrendi implements Comando {
+public class ComandoPrendi extends AbstractComando {
 	private String nomeAttrezzo;
 	@Override
 	public void esegui(Partita partita) {
@@ -31,19 +30,16 @@ public class ComandoPrendi implements Comando {
 
 	@Override
 	public void setParametro(String parametro) {
-		// TODO Auto-generated method stub
 		this.nomeAttrezzo = parametro;
 	}
 
 	@Override
 	public String getParametro() {
-		// TODO Auto-generated method stub
 		return nomeAttrezzo;
 	}
 
 	@Override
 	public String getNome() {
-		// TODO Auto-generated method stub
 		return "prendi";
 	}
 
