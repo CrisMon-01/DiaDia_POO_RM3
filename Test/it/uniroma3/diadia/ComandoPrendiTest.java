@@ -9,7 +9,6 @@ import it.uniroma3.diadia.Partita;
 import it.uniroma3.diadia.ambienti.Stanza;
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 import it.uniroma3.diadia.comandi.AbstractComando;
-import it.uniroma3.diadia.comandi.Comando;
 import it.uniroma3.diadia.comandi.ComandoPrendi;
 import it.uniroma3.diadia.giocatore.Borsa;
 
@@ -69,7 +68,6 @@ public class ComandoPrendiTest {
 		System.out.println(stanza.toString());
 		comando.setParametro("attrezzo");
 		comando.esegui(partita);
-		
 		assertTrue(this.borsa.hasAttrezzo(attrezzo.getNome()));
 		assertFalse(stanza.hasAttrezzo(attrezzo.getNome()));
 	}
@@ -84,8 +82,7 @@ public class ComandoPrendiTest {
 		//non ho più il limite attr
 		assertFalse(this.stanza.hasAttrezzo(attrezzo2.getNome()));
 		assertTrue(this.borsa.hasAttrezzo(attrezzo2.getNome()));
+		
 	}
-
-	
 
 }

@@ -6,7 +6,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import it.uniroma3.diadia.comandi.AbstractComando;
-import it.uniroma3.diadia.comandi.Comando;
 import it.uniroma3.diadia.comandi.FabbricaDiComandiFisarmonica;
 
 public class FabbricaDiComandiFisarmonicaTest {

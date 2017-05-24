@@ -7,7 +7,6 @@ import org.junit.Test;
 
 import it.uniroma3.diadia.Partita;
 import it.uniroma3.diadia.comandi.AbstractComando;
-import it.uniroma3.diadia.comandi.Comando;
 import it.uniroma3.diadia.comandi.ComandoVai;
 
 	public class ComandoVaiTest {
@@ -25,7 +24,7 @@ import it.uniroma3.diadia.comandi.ComandoVai;
 	public void testEseguiDirezioneValida() {
 	comando.setParametro("sud");
 	comando.esegui(this.partita);
-	assertEquals("Aula N10",partita.getStanzaCorrente().getNome());
+	assertEquals("Biblioteca",partita.getStanzaCorrente().getNome());
 	}
 	
 	@Test
@@ -37,13 +36,11 @@ import it.uniroma3.diadia.comandi.ComandoVai;
 	
 	@Test
 	public void testEseguiDirezioneNonValida() {
-		
-		comando.setParametro("sud");
+		comando.setParametro("est");
 		comando.esegui(this.partita);
 		comando.setParametro("sud");
 		comando.esegui(this.partita);
-		assertEquals("Aula N10",this.partita.getStanzaCorrente().getNome());
-		
+		assertEquals("Laboratorio Campus",this.partita.getStanzaCorrente().getNome());
 	}
 
 }

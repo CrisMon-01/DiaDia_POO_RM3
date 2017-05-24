@@ -14,12 +14,9 @@ import it.uniroma3.diadia.giocatore.Borsa;
 /**
  * Classe principale di diadia, un semplice gioco di ruolo ambientato al dia.
  * Per giocare crea un'istanza di questa classe e invoca il letodo gioca
- *
  * Questa e' la classe principale crea e istanzia tutte le altre
- * 
  * @author  docente di POO 
  *         (da un'idea di Michael Kolling and David J. Barnes) 
- *          
  * @version base
  */
 
@@ -58,10 +55,6 @@ public class DiaDia {
 	 * @return true se l'istruzione e' eseguita e il gioco continua, false altrimenti
 	 */
 	private boolean processaIstruzione(String istruzione) {
-		AbstractComando comando;
-		if(istruzione==null)
-			comando = new ComandoNonValido();
-		
 		FabbricaDiComandiFisarmonica factory = new FabbricaDiComandiFisarmonica();
 		AbstractComando comandoDaEseguire = factory.costruisciComando(istruzione);
 		comandoDaEseguire.esegui(this.partita);

@@ -9,7 +9,6 @@ import it.uniroma3.diadia.Partita;
 import it.uniroma3.diadia.ambienti.Stanza;
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 import it.uniroma3.diadia.comandi.AbstractComando;
-import it.uniroma3.diadia.comandi.Comando;
 import it.uniroma3.diadia.comandi.ComandoPosa;
 import it.uniroma3.diadia.giocatore.Borsa;
 
@@ -45,7 +44,6 @@ public class ComandoPosaTest {
 
 	@Test
 	public void testEseguiValido() {
-
 		borsa.addAttrezzo(attrezzo);
 		assertFalse(borsa.isEmpty());
 		comando.setParametro("attrezzo");
@@ -57,10 +55,11 @@ public class ComandoPosaTest {
 	@Test
 	public void testEseguiOggettoNonPresenteInBorsa() {
 		borsa.addAttrezzo(attrezzo);
-		comando.setParametro("foglio");
+		comando.setParametro("nonoggetto");
 		comando.esegui(partita);
 		assertFalse(borsa.isEmpty());
 		assertFalse(stanza.hasAttrezzo(attrezzo.getNome()));
+		assertTrue(borsa.hasAttrezzo(attrezzo.getNome()));
 	}
 	@Test
 	public void testEseguiParametroNullo() {
@@ -69,7 +68,6 @@ public class ComandoPosaTest {
 		comando.esegui(partita);
 		assertFalse(borsa.isEmpty());
 		assertFalse(stanza.hasAttrezzo(attrezzo.getNome()));
-
 	}
 	@Test
 	public void testEseguiStanzaPiena(){
